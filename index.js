@@ -29,7 +29,7 @@ app.get('/chptr0', (req, res) => {
 
     switch (x) {
         case "axbd":
-            res.sendFile("chapter1/howtoplay.html", { root: __dirname });
+            res.sendFile("chapter1/thebeginning.html", { root: __dirname });
             break;
         default:
             res.sendStatus(418);
