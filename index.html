@@ -62,17 +62,13 @@ function allowDrop(event) {
     function typeWriter() {
       if (i < txt.length) {
         document.getElementById("Welcome").innerHTML += txt.charAt(i);
-        typesound()
+
         i++;
         setTimeout(typeWriter, speed);
       }else{
       document.getElementById("Welcome").draggable=true;}
     }
 
-    function typesound(){
-        var x = document.getElementById("typesound");
-        x.play();
-    }
   
     </script>
 </html>
