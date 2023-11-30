@@ -32,48 +32,50 @@
        
 
   <script>
-    var i = 0;
-    var txt = 'Welcome Foolish Human...  Brave of you to think you would be able to defeat me. Well good luck!!    ';
-    var txt2 = ['HEY, YOU ARE NOT ALLOWED TO DO THAT', "WHAT DID I SAY", "ONE MORE TIME AND YOU WILL BE BANNED"];
-    var speed = 50;
-    var d =0;
-    var s = -1;
-    function dragStart(event) {
-  event.dataTransfer.setData("Text", event.target.id);
-  document.getElementById("demo").innerHTML = "Started to drag the text";
-}
-
-function allowDrop(event) {
-  event.preventDefault();
-}
-    function stanger(event){
-        s++;
-        d=0;
-        event.preventDefault();
-        document.getElementById("Welcome").style.colorInterpolation
-        document.getElementById("Welcome").innerHTML = "";
-        anger()
-    }
-    function anger(){
-        if(s==3){
-            window.location.replace("/next");
-        }
-        
-        if (d < txt2[s].length) {
-        document.getElementById("Welcome").innerHTML += txt2[s].charAt(d);
-        d++;
-        setTimeout(anger, speed);
+      var i = 0;
+      var txt = 'Welcome Foolish Human...  Brave of you to think you would be able to defeat me. Well good luck!!    ';
+      var txt2 = ['HEY, YOU ARE NOT ALLOWED TO DO THAT', "WHAT DID I SAY", "ONE MORE TIME AND YOU WILL BE BANNED"];
+      var speed = 50;
+      var d = 0;
+      var s = -1;
+      function dragStart(event) {
+          event.dataTransfer.setData("Text", event.target.id);
+          document.getElementById("demo").innerHTML = "Started to drag the text";
       }
-    }
-    function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("Welcome").innerHTML += txt.charAt(i);
 
-        i++;
-        setTimeout(typeWriter, speed);
-      }else{
-      document.getElementById("Welcome").draggable=true;}
-    }
+      function allowDrop(event) {
+          event.preventDefault();
+      }
+      function stanger(event) {
+          s++;
+          d = 0;
+          event.preventDefault();
+          document.getElementById("Welcome").style.colorInterpolation
+          document.getElementById("Welcome").innerHTML = "";
+          anger()
+      }
+      function anger() {
+          if (s == 3) {
+              window.location.replace("/next");
+          }
+
+          if (d < txt2[s].length) {
+              document.getElementById("Welcome").innerHTML += txt2[s].charAt(d);
+              d++;
+              setTimeout(anger, speed);
+          }
+      }
+      function typeWriter() {
+          if (i < txt.length) {
+              document.getElementById("Welcome").innerHTML += txt.charAt(i);
+
+              i++;
+              setTimeout(typeWriter, speed);
+          } else {
+              document.getElementById("Welcome").draggable = true;
+          }
+      }
+      <script src="scripts/DragDropTouch.js"></script>
 
   
     </script>
