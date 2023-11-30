@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\public\\images"
   ],
-  "SelectedNode": "\\C:\\Users\\jaspe\\Source\\Repos\\TheSiteGame",
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }
