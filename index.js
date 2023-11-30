@@ -23,3 +23,16 @@ app.get('/howtoplay', (req, res) => {        //get requests to the root ("/") wi
     res.sendFile("howtoplay.html", { root: __dirname })      //server responds by sending the index.html file to the client's browser
     //the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
 });
+
+app.get('/chptr0', (req, res) => {  
+    var x = req.query.stat;
+
+    switch (x) {
+        case "axbd":
+            res.sendFile("chapter1/howtoplay.html", { root: __dirname });
+            break;
+        default:
+            res.sendStatus(418);
+    }
+    
+});

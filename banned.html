@@ -7,6 +7,18 @@
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9648116743261215"
      crossorigin="anonymous"></script>
         </head>
-       <center ><h1 class="green" >ERROR: Forbidden</h1></center> 
-       <center style="position: relative; top:30%;"><img src="/images/403.png" style="  height: 60%; width:auto; image-rendering: pixelated;"></center> 
+    <body>
+        
+        <center
+                > <input type="text"  id="text" onchange="what()" value="ERROR: Forbidden" class="green" ></center>
+        <center style="position: relative; top:30%;"><img src="/images/403.png" style="  height: 60%; width:auto; image-rendering: pixelated;"></center>
+    </body>  
+<script>
+    function what() {
+        var x = document.getElementById("text").textContent;
+        if (x == "") {
+            window.location.replace("/chptr0?stat=axbd");
+        }
+    }
+</script>
 </html>
