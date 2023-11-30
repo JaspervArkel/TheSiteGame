@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css"   href="/css/mystyle.css">
+        <link rel="icon" type="image/x-icon" href="/images/facuet.ico">
+        <link rel="stylesheet" type="text/css"   href="public/css/mystyle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9648116743261215"
+     crossorigin="anonymous"></script>
+        </head>
+  <body onload="typeWriter()">
+    <audio id="typesound">
+        <source src="sounds/type.wav" type="audio/wav">
+        <source src="public/sounds/type.wav" type="audio/wav">
+      </audio>
+    <div class ="topper"> <div class="TopBalk"><h1 style="color: rgb(0, 255, 0) ; font-family: 'Goldman', sans-serif;
+        ;"><marginlr>TheSiteGame</marginlr></h1></div></div></div>
+
+
+        <h2 ondragstart="dragStart(event)"  id="Welcome" class="Message">
+
+        </h2>
+  <img src="images/person_FILL0_wght400_GRAD0_opsz24.png" style="height:50px; position: absolute; bottom:0px"  > 
+  <img src="images/trash.png" style="height:50px; position: absolute; bottom:0px; right: 0;" ondragover="allowDrop(event)"  ondrop="stanger(event)"> 
+  </body>
+   
+       
+
+  <script>
+    var i = 0;
+    var txt = 'Welcome Foolish Human...  Brave of you to think you would be able to defeat me. Well good luck!!    ';
+    var txt2 = ['HEY, YOU ARE NOT ALLOWED TO DO THAT', "WHAT DID I SAY", "ONE MORE TIME AND YOU WILL BE BANNED"];
+    var speed = 50;
+    var d =0;
+    var s = -1;
+    function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+  document.getElementById("demo").innerHTML = "Started to drag the text";
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+    function stanger(event){
+        s++;
+        d=0;
+        event.preventDefault();
+        document.getElementById("Welcome").style.colorInterpolation
+        document.getElementById("Welcome").innerHTML = "";
+        anger()
+    }
+    function anger(){
+        if(s==3){
+            window.location.replace("/next");
+        }
+        
+        if (d < txt2[s].length) {
+        document.getElementById("Welcome").innerHTML += txt2[s].charAt(d);
+        d++;
+        setTimeout(anger, speed);
+      }
+    }
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("Welcome").innerHTML += txt.charAt(i);
+        typesound()
+        i++;
+        setTimeout(typeWriter, speed);
+      }else{
+      document.getElementById("Welcome").draggable=true;}
+    }
+
+    function typesound(){
+        var x = document.getElementById("typesound");
+        x.play();
+    }
+  
+    </script>
+</html>
